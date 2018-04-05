@@ -32,6 +32,12 @@ def data():
   response.headers['Cache-Control'] = 'no-cache'
   return json.dumps(dataset(), default=json_util.default)
 
+@bottle.route("/current", method="GET")
+def data():
+  response.headers['Content-Type'] = 'application/json'
+  response.headers['Cache-Control'] = 'no-cache'
+  return json.dumps(current(), default=json_util.default)
+
 # @bottle.route("/data", method="POST")
 # @bottle.auth_basic(authenticate)
 # def data():

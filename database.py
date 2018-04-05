@@ -34,6 +34,9 @@ def dataset():
     disconnect(conn,curs)
     return rows
 
+def current():
+    return dataset()[0]
+
 def custom_query():
     conn, curs = connect_to_db()
     curs.execute("Select count(data) from readings;")
