@@ -33,3 +33,12 @@ def dataset():
     rows = curs.fetchall()
     disconnect(conn,curs)
     return rows
+
+def custom_query():
+    conn, curs = connect_to_db()
+    curs.execute("Select count(data) from readings;")
+    rows = curs.fetchall()
+    disconnect(conn,curs)
+    return rows
+
+print(custom_query()[0][0])
