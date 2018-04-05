@@ -1,4 +1,6 @@
 
+var depths = [];
+var dates  = [];
 
 updateData();
 
@@ -11,12 +13,11 @@ function updateData(){
 
     	for(var i=0; i<data.length; i++){
     		// Depth in CM
-    		var depth = data[i][0];
-    		console.log("Depth in cm = " + depth);
+    		depths[i] = data[i][0];
 
     		// Date
-    		var date = new Date(data[i][1].$date);
-    		console.log("Date : " + date);
+            var date = new Date(data[i][1].$date)
+    		dates[i] = date;
     	}
     }
 
@@ -24,6 +25,8 @@ function updateData(){
 	setTimeout(function(){updateData()}, 5000);
 }
 
+console.log(depths);
+console.log(dates);
 
 $.getJSON('http://127.0.0.1:5000/current', function(data) {
 
