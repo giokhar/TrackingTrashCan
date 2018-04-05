@@ -1,8 +1,12 @@
 import psycopg2
 from os import environ 
 
+def get_my_key(filename):
+    with open(filename) as f:
+        return f.read()
+
 def get_db_param():
-    url = "".split('//')[1]
+    url = get_my_key("key.txt").split('//')[1]
     auth, conn = url.split("@")
     username, password = auth.split(":")
     socket, database = conn.split("/")
