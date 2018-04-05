@@ -1,12 +1,15 @@
 import bottle
+from bottle import response
 from database import *
 from datetime import datetime
 import bcrypt
 import os
+import json
+from bson import json_util
 
 from sys import argv
-HOST = "0.0.0.0"
-PORT = argv[1]
+HOST = "127.0.0.1"
+PORT = 5000
 
 
 def authenticate(username, password):
@@ -19,21 +22,25 @@ def authenticate(username, password):
 def index():
   return bottle.template("index.html")
 
-
-@bottle.route("/data", method="POST")
-@bottle.auth_basic(authenticate)
+@bottle.route("/data", method="GET")
 def data():
-  username, password = bottle.request.auth
-  data_value = bottle.request.json
+  response.headers['Content-Type'] = 'application/json'
+  response.headers['Cache-Control'] = 'no-cache'
+  return json.dumps(dataset(), default=json_util.default)
 
-  conn, cursor = connect_to_db()
-  cursor.execute("Insert into readings values(%d, '%s')" % (data_value["Data"], datetime.now()))
-  conn.commit()
-  disconnect(conn,cursor)
-  print("ADDED", data_value["Data"])
-  bottle.response.status = 200
-  return {"ADDED": data_value["Data"]}
+# @bottle.route("/data", method="POST")
+# @bottle.auth_basic(authenticate)
+# def data():
+#   username, password = bottle.request.auth
+#   data_value = bottle.request.json
+
+#   conn, cursor = connect_to_db()
+#   cursor.execute("Insert into readings values(%d, '%s')" % (data_value["Data"], datetime.now()))
+#   conn.commit()
+#   disconnect(conn,cursor)
+#   print("ADDED", data_value["Data"])
+#   bottle.response.status = 200
+#   return {"ADDED": data_value["Data"]}
 
 # Run the WebApp
 bottle.run(host=HOST, port=PORT)
-

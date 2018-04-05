@@ -27,8 +27,9 @@ def disconnect(conn, cursor):
     cursor.close()
     conn.close()
 
-conn, curs = connect_to_db()
-curs.execute("Select * from readings order by time_val desc;")
-rows = curs.fetchall()
-disconnect(conn,curs)
-print(rows[0])
+def dataset():
+    conn, curs = connect_to_db()
+    curs.execute("Select * from readings order by time_val desc;")
+    rows = curs.fetchall()
+    disconnect(conn,curs)
+    return rows
