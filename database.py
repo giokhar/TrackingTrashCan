@@ -41,4 +41,4 @@ def custom_query():
     disconnect(conn,curs)
     return rows
 
-print(custom_query()[0][0])
+# print(custom_query()[0][0])
