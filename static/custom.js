@@ -11,5 +11,5 @@ function updateData(){
     }
 
 	});
-	setTimeout(function(){updateData()}, 1000);
+	setTimeout(function(){updateData()}, 5000);
 }
