@@ -1,5 +1,5 @@
 import bottle
-from bottle import response
+from bottle import response, static_file
 from database import *
 from datetime import datetime
 import bcrypt
@@ -17,6 +17,10 @@ def authenticate(username, password):
     return True
   else:
     return False
+
+@bottle.route('/static/<filepath:path>')
+def server_static(filepath):
+    return static_file(filepath, root='static/')
 
 @bottle.route("/", method="GET")
 def index():
