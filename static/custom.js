@@ -5,7 +5,7 @@ var dates  = [];
 updateData();
 
 function updateData(){
-	$.getJSON('http://127.0.0.1:5000/data', function(data) {
+	$.getJSON('http://127.0.0.1:5000/api/data', function(data) {
     //data is the JSON string
     
     if (data.length != parseInt($("#data").text())) {
@@ -28,7 +28,7 @@ function updateData(){
 console.log(depths);
 console.log(dates);
 
-$.getJSON('http://127.0.0.1:5000/current', function(data) {
+$.getJSON('http://127.0.0.1:5000/api/current', function(data) {
 
 	var date = new Date(data[1].$date);
 

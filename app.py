@@ -26,31 +26,31 @@ def server_static(filepath):
 def index():
   return bottle.template("index.html")
 
-@bottle.route("/data", method="GET")
-def data():
+@bottle.route("/api/data", method="GET")
+def api_data():
   response.headers['Content-Type'] = 'application/json'
   response.headers['Cache-Control'] = 'no-cache'
   return json.dumps(dataset(), default=json_util.default)
 
-@bottle.route("/current", method="GET")
-def data():
+@bottle.route("/api/current", method="GET")
+def api_current():
   response.headers['Content-Type'] = 'application/json'
   response.headers['Cache-Control'] = 'no-cache'
   return json.dumps(current(), default=json_util.default)
 
-# @bottle.route("/data", method="POST")
-# @bottle.auth_basic(authenticate)
-# def data():
-#   username, password = bottle.request.auth
-#   data_value = bottle.request.json
+@bottle.route("/data", method="POST")
+@bottle.auth_basic(authenticate)
+def data():
+  username, password = bottle.request.auth
+  data_value = bottle.request.json
 
-#   conn, cursor = connect_to_db()
-#   cursor.execute("Insert into readings values(%d, '%s')" % (data_value["Data"], datetime.now()))
-#   conn.commit()
-#   disconnect(conn,cursor)
-#   print("ADDED", data_value["Data"])
-#   bottle.response.status = 200
-#   return {"ADDED": data_value["Data"]}
+  conn, cursor = connect_to_db()
+  cursor.execute("Insert into readings values(%d, '%s')" % (data_value["Data"], datetime.now()))
+  conn.commit()
+  disconnect(conn,cursor)
+  print("ADDED", data_value["Data"])
+  bottle.response.status = 200
+  return {"ADDED": data_value["Data"]}
 
 # Run the WebApp
 bottle.run(host=HOST, port=PORT)
