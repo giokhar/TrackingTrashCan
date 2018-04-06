@@ -29,7 +29,7 @@ def disconnect(conn, cursor):
 
 def dataset():
     conn, curs = connect_to_db()
-    curs.execute("Select * from readings order by time_val desc;")
+    curs.execute("Select * from readings order by id desc;")
     rows = curs.fetchall()
     disconnect(conn,curs)
     return rows
@@ -43,5 +43,5 @@ def custom_query():
     rows = curs.fetchall()
     disconnect(conn,curs)
     return rows
-
-# print(custom_query()[0][0])
+def format_date(date):
+    return (str(date.year) + "/" + str(date.month).zfill(2) + "/" + str(date.day).zfill(2) + " " + str(date.hour).zfill(2) + ":" + str(date.minute).zfill(2) + ":" + str(date.second).zfill(2))

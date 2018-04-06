@@ -2,18 +2,16 @@ import bottle
 from bottle import response, static_file
 from database import *
 from datetime import datetime
-import bcrypt
 import os
 import json
-from bson import json_util
 
 from sys import argv
-HOST = "127.0.0.1"
-PORT = 5000
 
+HOST = "0.0.0.0"
+PORT = argv[1]
 
 def authenticate(username, password):
-  if username == "foo" and password == "abc.123":
+  if username == "foo" and password == "abcd.123":
     return True
   else:
     return False
@@ -30,13 +28,13 @@ def index():
 def api_data():
   response.headers['Content-Type'] = 'application/json'
   response.headers['Cache-Control'] = 'no-cache'
-  return json.dumps(dataset(), default=json_util.default)
+  return json.dumps(dataset())
 
 @bottle.route("/api/current", method="GET")
 def api_current():
   response.headers['Content-Type'] = 'application/json'
   response.headers['Cache-Control'] = 'no-cache'
-  return json.dumps(current(), default=json_util.default)
+  return json.dumps(current())
 
 @bottle.route("/data", method="POST")
 @bottle.auth_basic(authenticate)
@@ -45,7 +43,7 @@ def data():
   data_value = bottle.request.json
 
   conn, cursor = connect_to_db()
-  cursor.execute("Insert into readings values(%d, '%s')" % (data_value["Data"], datetime.now()))
+  cursor.execute("Insert into readings values(%d, '%s')" % (data_value["Data"], format_date(datetime.now())))
   conn.commit()
   disconnect(conn,cursor)
   print("ADDED", data_value["Data"])
@@ -54,3 +52,4 @@ def data():
 
 # Run the WebApp
 bottle.run(host=HOST, port=PORT)
+
