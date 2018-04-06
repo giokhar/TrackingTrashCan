@@ -7,7 +7,7 @@ import json
 
 from sys import argv
 
-HOST = "0.0.0.0"
+HOST = "127.0.0.1"
 PORT = argv[1]
 
 def authenticate(username, password):
