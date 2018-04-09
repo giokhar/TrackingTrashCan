@@ -17,13 +17,18 @@ function main(){
             }]
         },
         options: {
+            animation: {
+                duration: 0
+            },
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero: true,
+                        stepSize: 5,
+                        max: 90
                     }
                 }]
-            }
+            },
         }
     });
 
@@ -36,16 +41,30 @@ function updateData(){
     if (data.length != parseInt($("#data").text())) {
     	$("#data").text(data.length);
 
+        depths = [];
+        dates = [];
+
         // console.log(data);
+        var counter = 0;
     	for (var i in data){
     		// Depth in CM
     		depths.push(data[i][1]);
 
     		// Date
     		dates.push(data[i][2]);
+            counter++;
+
+            if (counter == 50){ 
+                break;
+            }
     	}
     }
+
+    depths = depths.reverse();
+    dates = dates.reverse();
+
     main();
+
 	});
 	setTimeout(function(){updateData()}, 5000);
 }
