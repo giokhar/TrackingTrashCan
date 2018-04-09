@@ -20,6 +20,7 @@ function main(){
             animation: {
                 duration: 0
             },
+            responsive: false,
             scales: {
                 yAxes: [{
                     ticks: {

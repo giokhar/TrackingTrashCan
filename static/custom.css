@@ -1,4 +1,5 @@
 #myChart {
-	width: 40em;
-	height: 20em;
+	position: relative; 
+	/*height:50em;*/
+	width:80em;
 }
