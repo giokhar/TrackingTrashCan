@@ -16,7 +16,7 @@ function main(){
         data: {
             labels: dates,
             datasets: [{
-                label: '# of Votes',
+                label: 'Available Depth (cm)',
                 data: depths,
                 borderColor: 'rgba(83, 82, 237, 1)',
                 backgroundColor: 'rgba(83, 82, 237, 0.5)',
