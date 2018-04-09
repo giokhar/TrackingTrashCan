@@ -1,6 +1,12 @@
 
 var depths = [];
 var dates  = [];
+var link = window.location.protocol+"//"+window.location.hostname;
+
+if (window.location.port) {
+    link += ":"+window.location.port;
+}
+
 
 function main(){
 
@@ -12,7 +18,8 @@ function main(){
             datasets: [{
                 label: '# of Votes',
                 data: depths,
-                borderColor: 'rgba(255,99,132,1)',
+                borderColor: 'rgba(83, 82, 237, 1)',
+                backgroundColor: 'rgba(83, 82, 237, 0.5)',
                 borderWidth: 1
             }]
         },
@@ -36,7 +43,7 @@ function main(){
 }
 
 function updateData(){
-	$.getJSON('http://127.0.0.1:5000/api/data', function(data) {
+	$.getJSON(link+'/api/data', function(data) {
     //data is the JSON string
     
     if (data.length != parseInt($("#data").text())) {
