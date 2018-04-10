@@ -4,23 +4,35 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>TrashCan</title>
+	<link rel="stylesheet" href="static/bootstrap.css">
 	<link rel="stylesheet" href="static/custom.css">
 </head>
 
 <body>
 
-	<center>
-		<h2>
-			Number of items in the database: 
-			<p id="data">0</p>
-		</h2><br>
-		<canvas id="Donut"></canvas><br>
-		<canvas id="myChart"></canvas>
-	</center>
+	
+		<center>
+			<h2>
+				Number of items in the database: 
+				<p id="data">0</p>
+			</h2><br>
+			<div class="row">
+				<div class="col-md-6 text-center">
+					<canvas id="Donut"></canvas>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<canvas id="myChart"></canvas>
+				</div>
+			</div>
+		</center>
 
 
 <script type="text/javascript" charset="utf-8" src="static/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="static/chart.js"></script>
+<script type="text/javascript" charset="utf-8" src="static/bootstrap.js"></script>
 <script type="text/javascript" charset="utf-8" src="static/custom.js"></script>
 </body>
 
