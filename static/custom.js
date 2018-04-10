@@ -65,16 +65,21 @@ function donut(pieData, filledColor) {
                 datasets: [{
                     data: pieData[0],
                     backgroundColor: [
-                      filledColor,
-                      "#bdc3c7"
+                      // filledColor,
+                      "#34495e",
+                      filledColor
                     ],
                     hoverBackgroundColor: [
-                      filledColor,
-                      "#bdc3c7"
+                      // filledColor,
+                      "#34495e",
+                      filledColor
                     ]
                 }]
             },
         options: {
+            animation: {
+                duration: 0
+            },
             elements: {
                 center: {
                     text: pieData[1].toString()+"%",
@@ -138,17 +143,17 @@ function updateData(){
 
         var filledColor = "";
         // Donut chart'
-        if (data[0][1]/70 < 0.5){
+        if ((70-data[0][1])/70 < 0.5){
             filledColor = "#27ae60";
         }
-        else if (0.5 <= data[0][1]/70 && data[0][1]/70 < 0.75) {
+        else if (0.5 <= (70-data[0][1])/70 && (70-data[0][1])/70 < 0.75) {
             filledColor = "#f1c40f";
         }
         else {
             filledColor = "#e74c3c";
         }
-        var perc = precisionRound(data[0][1]/70*100, 2);
-        var pieData = [[data[0][1], 70-data[0][1]], perc];
+        var perc = precisionRound((data[0][1])/70*100, 2);
+        var pieData = [[70-data[0][1],data[0][1]], perc];
         donut(pieData, filledColor);
 
         // Historical Data Chart
