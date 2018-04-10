@@ -80,6 +80,7 @@ function donut(pieData, filledColor) {
             animation: {
                 duration: 0
             },
+            responsive: false,
             elements: {
                 center: {
                     text: pieData[1].toString()+"%",
@@ -109,7 +110,7 @@ function main(){
                 data: depths,
                 borderColor: 'rgba(83, 82, 237, 1)',
                 backgroundColor: 'rgba(83, 82, 237, 0.5)',
-                borderWidth: 1
+                borderWidth: 4
             }]
         },
         options: {
@@ -183,11 +184,4 @@ function updateData(){
 }
 
 updateData();
-
-// $.getJSON('http://127.0.0.1:5000/api/current', function(data) {
-
-// 	var date = new Date(data[3]);
-
-// 	console.log(date);
-// });
 
