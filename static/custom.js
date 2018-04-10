@@ -41,34 +41,44 @@ Chart.pluginService.register({
         }
     });
 
+function precisionRound(number, precision) {
+  var factor = Math.pow(10, precision);
+  return Math.round(number * factor) / factor;
+}
 
-        var config = {
+var depths = [];
+var dates  = [];
+var link = window.location.protocol+"//"+window.location.hostname;
+
+if (window.location.port) {
+    link += ":"+window.location.port;
+}
+
+function donut(pieData, filledColor) {
+    var config = {
             type: 'doughnut',
             data: {
                 labels: [
-                  "Red",
-                  "Green",
-                  "Yellow"
+                  "Filled",
+                  "Free"
                 ],
                 datasets: [{
-                    data: [300, 50, 100],
+                    data: pieData[0],
                     backgroundColor: [
-                      "#FF6384",
-                      "#36A2EB",
-                      "#FFCE56"
+                      filledColor,
+                      "#bdc3c7"
                     ],
                     hoverBackgroundColor: [
-                      "#FF6384",
-                      "#36A2EB",
-                      "#FFCE56"
+                      filledColor,
+                      "#bdc3c7"
                     ]
                 }]
             },
         options: {
             elements: {
                 center: {
-                    text: '90%',
-          color: '#FF6384', // Default is #000000
+                    text: pieData[1].toString()+"%",
+          color: filledColor, // Default is #000000
           fontStyle: 'Arial', // Default is Arial
           sidePadding: 20 // Defualt is 20 (as a percentage)
                 }
@@ -80,12 +90,6 @@ Chart.pluginService.register({
 var ctx_two = document.getElementById("Donut").getContext("2d");
 var Donut = new Chart(ctx_two, config);
 
-var depths = [];
-var dates  = [];
-var link = window.location.protocol+"//"+window.location.hostname;
-
-if (window.location.port) {
-    link += ":"+window.location.port;
 }
 
 function main(){
@@ -132,8 +136,20 @@ function updateData(){
         // Number of items
         $("#data").text(data.length);
 
-        // Donut chart
-
+        var filledColor = "";
+        // Donut chart'
+        if (data[0][1]/70 < 0.5){
+            filledColor = "#27ae60";
+        }
+        else if (0.5 <= data[0][1]/70 && data[0][1]/70 < 0.75) {
+            filledColor = "#f1c40f";
+        }
+        else {
+            filledColor = "#e74c3c";
+        }
+        var perc = precisionRound(data[0][1]/70*100, 2);
+        var pieData = [[data[0][1], 70-data[0][1]], perc];
+        donut(pieData, filledColor);
 
         // Historical Data Chart
         depths = [];
