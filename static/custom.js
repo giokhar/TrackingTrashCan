@@ -33,7 +33,7 @@ function main(){
                     ticks: {
                         beginAtZero: true,
                         stepSize: 5,
-                        max: 90
+                        max: 70
                     }
                 }]
             },
