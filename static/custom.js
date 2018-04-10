@@ -66,10 +66,9 @@ function updateData(){
                 break;
             }
     	}
+        depths = depths.reverse();
+        dates = dates.reverse();
     }
-
-    depths = depths.reverse();
-    dates = dates.reverse();
 
     main();
 
