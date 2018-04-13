@@ -177,7 +177,7 @@ function updateData(){
         dates = dates.reverse();
 
     }
-    $("#date").text(dates[0]);
+    $(".date").text(dates[0]);
     main();
 
 	});
