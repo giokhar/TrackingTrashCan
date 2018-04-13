@@ -80,7 +80,7 @@ function donut(pieData, filledColor) {
             animation: {
                 duration: 0
             },
-            responsive: false,
+            responsive: true,
             elements: {
                 center: {
                     text: pieData[1].toString()+"%",
@@ -175,8 +175,9 @@ function updateData(){
     	}
         depths = depths.reverse();
         dates = dates.reverse();
-    }
 
+    }
+    $("#date").text(dates[0]);
     main();
 
 	});
