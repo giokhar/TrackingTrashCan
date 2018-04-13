@@ -100,7 +100,7 @@ var Donut = new Chart(ctx_two, config);
 
 function main(){
 
-    var ctx_one = document.getElementById("myChart").getContext('2d');
+    var ctx_one = document.getElementById("myChartOne").getContext('2d');
     var myChart = new Chart(ctx_one, {
         type: 'line',
         data: {
@@ -117,7 +117,7 @@ function main(){
             animation: {
                 duration: 0
             },
-            responsive: false,
+            responsive: true,
             scales: {
                 yAxes: [{
                     ticks: {

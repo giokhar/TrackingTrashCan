@@ -22,7 +22,7 @@ def server_static(filepath):
 
 @bottle.route("/", method="GET")
 def index():
-  return bottle.template("index.html")
+  return bottle.template("dashboard.html")
 
 @bottle.route("/api/data", method="GET")
 def api_data():

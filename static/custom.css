@@ -1,11 +1,10 @@
-#myChart {
+#myChartOne {
 	position: relative; 
-	/*height:50em;*/
-	width:80em;
+	height:32em;
 }
 
 #Donut {
 	position: relative; 
 	/*height:50em;*/
-	height:23em;
+	/*height:23em;*/
 }
