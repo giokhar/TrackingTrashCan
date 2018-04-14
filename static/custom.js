@@ -99,7 +99,7 @@ var Donut = new Chart(ctx_two, config);
 }
 
 function UpdateTrashCan(myPerc){
-    myPerc = 43;
+
     var image = 0;
     var imageUrl = "";
 
