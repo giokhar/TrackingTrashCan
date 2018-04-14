@@ -145,15 +145,19 @@ function updateData(){
         var filledColor = "";
         // Donut chart'
         if ((70-data[0][1])/70 < 0.5){
-            filledColor = "#27ae60";
+            filledColor = "#27ae60"; // Green
+            $("#vertical-bar").addClass("progress-bar-green");
         }
         else if (0.5 <= (70-data[0][1])/70 && (70-data[0][1])/70 < 0.75) {
-            filledColor = "#f1c40f";
+            filledColor = "#f1c40f"; // Yellow
+            $("#vertical-bar").addClass("progress-bar-yellow");
         }
         else {
-            filledColor = "#e74c3c";
+            filledColor = "#e74c3c"; // Red
+            $("#vertical-bar").addClass("progress-bar-red");
         }
         var perc = precisionRound((data[0][1])/70*100, 2);
+        $("#vertical-bar").height(perc+"%");
         var pieData = [[70-data[0][1],data[0][1]], perc];
         donut(pieData, filledColor);
 

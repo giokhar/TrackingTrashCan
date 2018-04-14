@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/neat.min.css?v=1.0">
     <link rel="stylesheet" href="static/custom.css">
   </head>
@@ -274,7 +275,7 @@
             </div>
           </div> -->
         </header>
-
+        <!-- START:Content -->
         <div class="container">
 
           <div class="row">
@@ -290,7 +291,23 @@
                 </div>
               
               </div>
+            </div>
 
+            <div class="col-xl-6 col-md-6">
+              <div class="c-card" data-mh="overview-cards">
+                <h4>Current Status</h4>
+                <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
+
+                <div class="c-chart">
+                  <div class="c-chart__body">
+                    <div class="progress progress-bar-vertical">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" id="vertical-bar">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
             </div>
           </div>
 
@@ -305,8 +322,8 @@
             </div>
           </div>
 
-        </div><!-- // .container -->
-
+        </div>
+        <!-- END:Content -->
         <footer class="c-footer u-mh-medium">
           <p>© 2018 Neat, Inc</p>
           <span class="c-footer__divider">|</span>
@@ -322,6 +339,7 @@
 
     <!-- Main JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="static/js/neat.min.js?v=1.0" encoding="utf-8">
     </script>
     <script type="text/javascript" charset="utf-8" src="static/chart.js"></script>
