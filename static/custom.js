@@ -20,7 +20,7 @@ $("#nav-about").click(function() {
 });
 
 
-
+// CharJS Service
 Chart.pluginService.register({
         beforeDraw: function (chart) {
             if (chart.config.options.elements.center) {
