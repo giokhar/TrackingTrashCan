@@ -18,6 +18,7 @@
       background-color: #e74c3c !important;
 }
 
+
 #trash {
 	height: 95%;
 }
@@ -41,7 +42,7 @@
 	}
 
 	.progress-bar-vertical {
-	  width: 15px;
+	  width: 20px;
 	  min-height: 60%;
 	  display: flex;
 	  align-items: flex-end;
@@ -51,5 +52,15 @@
 
 	#progress-bar-section {
 	visibility: visible;
+	}
+
+	.progress-bar-green {
+      background-color: #27ae60 !important;
+	}
+	.progress-bar-yellow {
+	      background-color: #f1c40f !important;
+	}
+	.progress-bar-red {
+	      background-color: #e74c3c !important;
 	}
 }

@@ -157,7 +157,7 @@ function updateData(){
             $("#vertical-bar").addClass("progress-bar-red");
         }
         var perc = precisionRound((data[0][1])/70*100, 2);
-        $("#vertical-bar").height(100-perc+"%");
+        $("#vertical-bar").height(perc+"%");
         var pieData = [[70-data[0][1],data[0][1]], perc];
         donut(pieData, filledColor);
 
