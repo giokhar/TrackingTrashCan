@@ -8,6 +8,9 @@
 	width:30em;
 }
 
+body {
+	font-family: Lato !important;
+}
 #trash {
 	height: 95%;
 }
