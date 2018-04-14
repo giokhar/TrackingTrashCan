@@ -98,6 +98,30 @@ var Donut = new Chart(ctx_two, config);
 
 }
 
+function UpdateTrashCan(myPerc){
+    myPerc = 43;
+    var image = 0;
+    var imageUrl = "";
+
+    if (0 < myPerc && myPerc <= 6){
+        // 1ball
+        image = 1;
+    }
+    else {
+        for (var i=1; i < 16; i++){
+            if (i*6 <= myPerc && (i+1)*6 > myPerc)
+            {
+                image = i+1;
+            }
+        }
+    }
+
+    imageUrl = "static/img/Trashcan/"+image+".png";
+
+    $("#trash").attr("src",imageUrl);
+
+}
+
 function main(){
 
     var ctx_one = document.getElementById("myChartOne").getContext('2d');
@@ -157,9 +181,12 @@ function updateData(){
             $("#vertical-bar").addClass("progress-bar-red");
         }
         var perc = precisionRound((data[0][1])/70*100, 2);
-        $("#vertical-bar").height(100-perc+"%");
         var pieData = [[70-data[0][1],data[0][1]], perc];
         donut(pieData, filledColor);
+
+        // Update Trashcan Data on Progressbar
+        $("#vertical-bar").height(100-perc+"%");
+        UpdateTrashCan(100-perc);
 
         // Historical Data Chart
         depths = [];
@@ -182,6 +209,7 @@ function updateData(){
 
     }
     $(".date").text(dates[0]);
+
     main();
 
 	});
