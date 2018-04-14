@@ -1,11 +1,22 @@
+
+// Dynamic Navigation
 $("#nav-dashboard").click(function() {
+
   $(this).addClass("is-active");
   $("#nav-about").removeClass("is-active");
+  $(".c-navbar__title").text("Dashboard");
+
+  $("#dashboard").show();
+  $("#about").hide();
 });
 
 $("#nav-about").click(function() {
   $(this).addClass("is-active");
   $("#nav-dashboard").removeClass("is-active");
+  $(".c-navbar__title").text("About");
+
+  $("#dashboard").hide();
+  $("#about").show();
 });
 
 
