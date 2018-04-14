@@ -57,24 +57,24 @@ body {
 
 @media only screen and (min-width: 768px) {
 	#trash {
-		height: 60%;
+		height: 30%;
 	}
 
 	.c-card-one {
-		height: 62%;
+		height: 42%;
 	}
 
 	.progress-bar-vertical {
-	  width: 20px;
-	  min-height: 60%;
-	  display: flex;
-	  align-items: flex-end;
-	  margin-right: 20px;
-	  float: left;
+		width: 20px;
+		min-height: 30%;
+		display: flex;
+		align-items: flex-end;
+		margin-right: 20px;
+		float: left;
 	}
 
 	#progress-bar-section {
-	visibility: visible;
+		visibility: visible;
 	}
 
 	.progress-bar-green {
