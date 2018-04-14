@@ -104,7 +104,6 @@ function UpdateTrashCan(myPerc){
     var imageUrl = "";
 
     if (0 < myPerc && myPerc <= 6){
-        // 1ball
         image = 1;
     }
     else {

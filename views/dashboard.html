@@ -139,9 +139,6 @@
           </div>
           
 
-          <!-- <a class="c-sidebar__footer" href="#">
-            Logout <i class="c-sidebar__footer-icon feather icon-power"></i>
-          </a> -->
         </aside>
       </div>
 
@@ -277,52 +274,55 @@
         </header>
         <!-- START:Content -->
         <div class="container">
+          
+          <!-- DASHBOARD PAGE -->
+          <div id="dashboard">
+            <div class="row">
+              <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="c-card c-card-one" data-mh="overview-cards">
+                  <h4>Current Status</h4>
+                  <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
 
-          <div class="row">
-            <div class="col-xs-12 col-md-6 col-lg-6">
-              <div class="c-card c-card-one" data-mh="overview-cards">
-                <h4>Current Status</h4>
-                <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
-
-                <div class="c-chart">
-                  <div class="c-chart__body">
-                    <canvas id="Donut"></canvas>
-                  </div>
-                </div>
-              
-              </div>
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-lg-6">
-              <div class="c-card c-card-one" data-mh="overview-cards">
-                <h4>TrashCan</h4>
-                <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
-
-                <div class="c-chart">
-                  <div class="row">
-                    <div class="col-xs-9 col-md-9 col-lg-9 text-center">
-                      <img src="static/img/Trashcan/0.png" alt="TrashCan" id="trash">
+                  <div class="c-chart">
+                    <div class="c-chart__body">
+                      <canvas id="Donut"></canvas>
                     </div>
-                    <div class="col-xs-3 col-md-3 col-lg-3 text-center" id="progress-bar-section">
-                      <div class="progress progress-bar-vertical">
-                          <div class="progress-bar progress-bar-striped active" role="progressbar" id="vertical-bar">
-                          </div>
+                  </div>
+                
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="c-card c-card-one" data-mh="overview-cards">
+                  <h4>TrashCan</h4>
+                  <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
+
+                  <div class="c-chart">
+                    <div class="row">
+                      <div class="col-xs-9 col-md-9 col-lg-9 text-center">
+                        <img src="static/img/Trashcan/0.png" alt="TrashCan" id="trash">
+                      </div>
+                      <div class="col-xs-3 col-md-3 col-lg-3 text-center" id="progress-bar-section">
+                        <div class="progress progress-bar-vertical">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" id="vertical-bar">
+                            </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+                
                 </div>
-              
               </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
-              <div class="c-card">
-                <h4>TrashCan Historical Data</h4>
-                <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
+            <div class="row">
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                <div class="c-card">
+                  <h4>TrashCan Historical Data</h4>
+                  <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
 
-                <canvas id="myChartOne"></canvas>
+                  <canvas id="myChartOne"></canvas>
+                </div>
               </div>
             </div>
           </div>
