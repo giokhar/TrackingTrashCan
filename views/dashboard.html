@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard Two | Neat</title>
-    <meta name="description" content="Neat">
+    <title>SmartWaste</title>
+    <meta name="description" content="Trashcan">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Google Font -->
@@ -24,7 +24,7 @@
       <div class="o-page__sidebar js-page-sidebar">
         <aside class="c-sidebar">
           <div class="c-sidebar__brand">
-            <a href="#"><img src="static/img/logo.svg" alt="Neat"></a>
+            <h3>SMARTWASTE</h3>
           </div>
 
           <!-- Scrollable -->
@@ -70,23 +70,10 @@
           <!-- DASHBOARD PAGE -->
           <div id="dashboard">
             <div class="row">
-              <div class="col-xs-12 col-md-6 col-lg-6">
-                <div class="c-card c-card-one" data-mh="overview-cards">
-                  <h4>Current Status</h4>
-                  <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
-
-                  <div class="c-chart">
-                    <div class="c-chart__body">
-                      <canvas id="Donut"></canvas>
-                    </div>
-                  </div>
-                
-                </div>
-              </div>
 
               <div class="col-xs-12 col-md-6 col-lg-6">
                 <div class="c-card c-card-one" data-mh="overview-cards">
-                  <h4>TrashCan</h4>
+                  <h4>Live</h4>
                   <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
 
                   <div class="c-chart">
@@ -105,18 +92,35 @@
                 
                 </div>
               </div>
-            </div>
 
+              
+              <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="c-card c-card-one" data-mh="overview-cards">
+                  <h4>Current Status</h4>
+                  <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
+
+                  <div class="c-chart">
+                    <div class="c-chart__body">
+                      <canvas id="Donut"></canvas>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+
+            </div>
+            <!-- Historical Data -->
             <div class="row">
               <div class="col-xs-12 col-md-12 col-lg-12">
                 <div class="c-card">
-                  <h4>TrashCan Historical Data</h4>
+                  <h4>Trashcan Historical Data</h4>
                   <p class="u-mb-medium">Last Updated at: <span class="date" style="font-weight: bold;"></span></p>
 
                   <canvas id="myChartOne"></canvas>
                 </div>
               </div>
             </div>
+
           </div>
 
           <div id="about" style="display:none;">
@@ -140,7 +144,7 @@
         </div>
         <!-- END:Content -->
         <footer class="c-footer u-mh-medium">
-          <p>© 2018 Neat, Inc</p>
+          <p>© 2018 </p>
           <span class="c-footer__divider">|</span>
           <nav>
             <a class="c-footer__link" href="#">Terms</a>
