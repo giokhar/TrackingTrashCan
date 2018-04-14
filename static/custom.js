@@ -1,3 +1,14 @@
+$("#nav-dashboard").click(function() {
+  $(this).addClass("is-active");
+  $("#nav-about").removeClass("is-active");
+});
+
+$("#nav-about").click(function() {
+  $(this).addClass("is-active");
+  $("#nav-dashboard").removeClass("is-active");
+});
+
+
 
 Chart.pluginService.register({
         beforeDraw: function (chart) {
