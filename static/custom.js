@@ -151,8 +151,8 @@ function main(){
         data: {
             labels: dates,
             datasets: [{
-                label: 'Available Depth (cm)',
-                data: depths,
+                label: 'Filled Depth (cm)',
+                data: 70-depths,
                 borderColor: 'rgba(83, 82, 237, 1)',
                 backgroundColor: 'rgba(83, 82, 237, 0.5)',
                 borderWidth: 4
