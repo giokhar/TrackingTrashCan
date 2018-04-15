@@ -128,11 +128,8 @@ function UpdateTrashCan(myPerc){
     if (0 < myPerc && myPerc <= 6){
         image = 1;
     }
-    else if (myPerc > 67) {
-        image = 16;
-    }
     else {
-        for (var i=1; i < 16; i++){
+        for (var i=1; i <= 16; i++){
             if (i*6 <= myPerc && (i+1)*6 > myPerc)
             {
                 image = i+1;
