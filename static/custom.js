@@ -195,14 +195,20 @@ function updateData(){
         if ((70-data[0][1])/70 < 0.5){
             filledColor = "#27ae60"; // Green
             $("#vertical-bar").addClass("progress-bar-green");
+            $("#vertical-bar").removeClass("progress-bar-yellow");
+            $("#vertical-bar").removeClass("progress-bar-red");
         }
         else if (0.5 <= (70-data[0][1])/70 && (70-data[0][1])/70 < 0.75) {
             filledColor = "#f1c40f"; // Yellow
             $("#vertical-bar").addClass("progress-bar-yellow");
+            $("#vertical-bar").removeClass("progress-bar-green");
+            $("#vertical-bar").removeClass("progress-bar-red");
         }
         else {
             filledColor = "#e74c3c"; // Red
             $("#vertical-bar").addClass("progress-bar-red");
+            $("#vertical-bar").removeClass("progress-bar-yellow");
+            $("#vertical-bar").removeClass("progress-bar-green");
         }
         var perc = precisionRound((data[0][1])/70*100, 2);
         var pieData = [[70-data[0][1],data[0][1]], perc];
