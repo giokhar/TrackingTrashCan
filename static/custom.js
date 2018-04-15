@@ -152,7 +152,7 @@ function main(){
             labels: dates,
             datasets: [{
                 label: 'Filled Depth (cm)',
-                data: 70-depths,
+                data: depths,
                 borderColor: 'rgba(83, 82, 237, 1)',
                 backgroundColor: 'rgba(83, 82, 237, 0.5)',
                 borderWidth: 4
@@ -215,7 +215,7 @@ function updateData(){
         var counter = 0;
     	for (var i in data){
     		// Depth in CM
-    		depths.push(data[i][1]);
+    		depths.push(70-data[i][1]);
 
     		// Date
     		dates.push(data[i][2]);
