@@ -45,6 +45,3 @@ def custom_query():
     return rows
 def format_date(date):
     return (str(date.year) + "/" + str(date.month).zfill(2) + "/" + str(date.day).zfill(2) + " " + str(date.hour).zfill(2) + ":" + str(date.minute).zfill(2) + ":" + str(date.second).zfill(2))
-
-def utc_to_local(utc_dt):
-    return utc_dt.replace(tzinfo=timezone.utc).astimezone(tz=None)

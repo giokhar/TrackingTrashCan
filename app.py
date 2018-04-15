@@ -4,6 +4,7 @@ from database import *
 from datetime import datetime, timezone
 import os
 import json
+from pytz import timezone
 
 from sys import argv
 
@@ -43,7 +44,7 @@ def data():
   data_value = bottle.request.json
 
   conn, cursor = connect_to_db()
-  cursor.execute("Insert into readings values(%d, '%s')" % (data_value["Data"], format_date(utc_to_local(datetime.now()))))
+  cursor.execute("Insert into readings values(%d, '%s')" % (data_value["Data"], format_date(datetime.now(timezone('US/Eastern')))))
   conn.commit()
   disconnect(conn,cursor)
   print("ADDED", data_value["Data"])
