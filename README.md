@@ -1,4 +1,4 @@
-##Tracking Trash Can
+## Tracking Trash Can
 
 This is a live **Trackcan** monitoring system using arduino python (bottle framework) & JavaScript for GUI(Graphical User Interface) in web
 
