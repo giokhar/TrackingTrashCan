@@ -1,0 +1,1 @@
+postgres://curcrhozkelcvx:a8fe42dd5afcc2482a52fa35fa551cfa6491839bbcd0d9c0db187c2623c72236@ec2-54-243-130-33.compute-1.amazonaws.com:5432/d32esd3jk2tv40
